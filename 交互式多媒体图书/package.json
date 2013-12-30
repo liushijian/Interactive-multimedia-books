@@ -1,0 +1,14 @@
+{
+  "name": "BOOK",
+  "main": "bookshelf.html",
+  "description": "demo app of node-webkit",         /* APP的简单描述 */
+    "version": "0.1.0",                               /* APP的版本号 */
+    "keywords": [ "demo", "node-webkit" ],            /* APP的关键字，搜索APP时用到 */
+    "window": {                                       /* APP的窗口属性 */
+                                                  /* APP图标（windows下，状态栏上可见） */
+        "toolbar": false,                              /* 是否显示工具栏 */
+        
+        "frame": true                                 /* 是否显示外窗体，如最大化、最小化、关闭按钮 */
+    }
+ 
+}

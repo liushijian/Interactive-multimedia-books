@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html>
+<head>
+<!-- Bootstrap -->
+    <link href="style/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/common.css" type="text/css" rel="stylesheet" />
+<title>我的书架</title>
+<script src="js/script.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/zns.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2880049/tongji.gif"/></a></noscript>
+</head>
+
+<body>
+<div id="div1">
+    <ul id="ul1">
+        
+    </ul>
+	
+	<div id="bookshell">
+		<img src="images/wall-bookshelf.png" />
+	</div>
+
+	<div id="text">
+		<h1>我的书架</h1>
+	</div >	
+	  <div id="mybuttonOne" >
+       <a href="testTwo.html" class="button black bigrounded"></a> 
+      </div>
+	  <div id="mybuttonTwo">
+       <a href="testThree.html" class="button black bigrounded"></a>
+      </div>
+</div>
+<button class="btn btn-primary btn-lg " id="buttonOne" data-toggle="modal" data-target="#myModalOne">
+  删除图书
+</button>
+<!-- Modal -->
+<div class="modal fade" id="myModalOne" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">删除图书</h4>
+      </div>
+	  
+      <div class="modal-body">
+        <table class="table" id="tableIdOne" border="1">
+         </table>
+      </div>
+	  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="CloseOne">Close</button>
+        <button type="button" class="btn btn-primary" id="primaryOne">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<button class="btn btn-primary btn-lg " id="buttonThree" data-toggle="modal" >
+  打开图书
+</button>
+
+<button class="btn btn-primary btn-lg " id="buttonTwo" data-toggle="modal" data-target="#myModalTwo">
+  增加图书
+</button>
+<!-- Modal -->
+<div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">增加图书</h4>
+      </div>
+	  
+      <div class="modal-body">
+        <table class="table" id="tableIdTwo" border="1">
+         </table>
+      </div>
+	  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="CloseTwo">Close</button>
+        <button type="button" class="btn btn-primary" id="primaryTwo">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link charset="utf-8" type="text/css" href="逃出山洞/css/main.css" rel="stylesheet" media="screen" />
+		<script type="text/javascript">
+		function show_food()
+        {
+
+        var r=confirm("你找到了食物！");
+        if (r==true)
+        {
+		 document.getElementById('blank1').focus();
+		 pages[page].style.zIndex =num[page];
+		 pages[4].style.zIndex =101;
+		 page=4;
+		 fan1.play();
+        
+         }
+        else
+         {
+		  
+	      document.getElementById('line').focus();
+          
+	      
+         }
+		 }
+		 function show_line()
+        {
+
+        var r=confirm("你找到了绳子！");
+        if (r==true)
+        {
+		 document.getElementById('blank2').focus();
+         pages[page].style.zIndex =num[page];
+		 pages[5].style.zIndex =101;
+		 page=5;
+		 for(var i=0;i<5;i++){
+		    flips[i].target=-1;
+		 }
+		 fan2.play();
+		 
+         }
+        else
+         {
+		  document.getElementById('food').focus();
+          
+	      
+         }
+         }
+		</script>
+	</head>
+	<body>
+	
+		<div id="book">
+			<canvas id="pageflip-canvas"></canvas>
+			<div id="pages">
+				<section>
+					 <div>
+					<h2>山洞历险！！！TEST YOUR CHOICE!!!</h2>
+						 <p>
+						           
+									某年某月的某天早上，已经厌倦了城市生活的你决定来一次富有挑战精神的冒险，你决定去一座人迹罕至的高山，欣赏最美的日出。
+									 <img src="逃出山洞/photos/荒山.jpg" width="340" height="410">
+									 <audio src="逃出山洞/audio/begin.wav" autoplay>
+							         <audio src="逃出山洞/audio/fanye.wav" id="au">
+
+
+
+								
+											                        </p>
+						
+					</div>
+				</section>
+
+
+                	<section >
+					<div> 
+					<h2></h2>
+					<p>
+					     到达山脚下已是夜晚时分，这天晚上正是月黑风高之夜，山路崎岖难行不说，四周也被黑暗笼罩着，你在山脚下犹豫了许久，但最终你的冒险精神说服了你，决定在黑夜里来一次真正的探险...</p>
+
+						 <img src="逃出山洞/photos/夜行.jpg" width="340" height="410" id="picture2">
+						 
+					</div>
+				</section>
+
+
+
+
+				<section>
+				<div>
+				<h2></h2>
+                      <p>
+					  
+					  你在崎岖不平的山路上艰难的行走着，四周一片昏暗，你当然没能看见前方脚下的一个巨大的山洞，于是当你的左脚伸进了他那长者的大嘴时，一声惊呼从洞里传了出来。。。
+					  <img src="逃出山洞/photos/山洞.jpg" width="340" height="410" id="picture3" >
+					  <audio src="逃出山洞/audio/scream.wav" id="scr">
+					 
+
+					  </p>
+				</div>
+				</section>
+
+
+
+
+                	<section>
+					<div>
+						
+						<p>
+						<img  id="img1" src="逃出山洞/photos/black.png" style="width:500px; height:450px" usemap="#mainmap">
+							<map name="mainmap" id="img1">
+							<area
+							       id="food"
+                                   shape="circle"
+                                   coords="129,161,10"
+                                   href ="http://hao.360.cn/"
+								   onfocus="show_food();"
+                                   target ="_blank"
+                                    />
+									<area
+								   id="line"
+                                   shape="circle"
+                                   coords="100,131,20"
+                                   href ="http://www.people.com.cn/"
+								   onfocus="show_line();"
+                                   target ="_blank"
+								   />
+								   <area
+								   id="blank1"
+                                   shape="circle"
+                                   coords="149,161,30"
+                                   href ="http://www.people.com.cn/"
+								   onfocus=""
+                                   target ="_blank"
+                                    />
+									<area
+								   id="blank2"
+                                   shape="circle"
+                                   coords="151,163,32"
+                                   href ="http://www.people.com.cn/"
+								   onfocus=""
+                                   target ="_blank"
+                                    />
+									<area
+								   id="blank3"
+                                   shape="circle"
+                                   coords="161,133,12"
+                                   href ="http://www.people.com.cn/"
+								   onfocus=""
+                                   target ="_blank"
+                                    />
+									
+
+									
+									洞里漆黑一片，你觉得你应该做点什么，你想起了你的装备，那里面有一大包食物，以及一根绳子
+						</p>
+					</div>
+				</section>
+
+
+
+
+				<section>
+					<div>
+						<h2></h2>
+						<p>
+                          哦，你发现了你的食物，狼吞虎咽地吃完以后，你发现了你的绳子，可惜山洞的内壁十分光滑。你的绳子完全没有了作用。几个星期后，路过的另一队探险者发现了你，你已经饿死在山洞中。
+						  <img src="逃出山洞/photos/饿死.gif" width="340" height="410" id="picture4">		
+						  <audio src="逃出山洞/audio/shibai.wav" id="fan1">
+                        </p>
+						
+						
+					</div>
+				</section>
+				
+
+				<section>
+				<div>
+				<h2></h2>
+				<p>
+				          哦，你发现了你的绳子，但山洞的内壁十分光滑，你的绳子没有作用，于是你继续在山洞中寻找，发现了一个巨大的袋子，没错，那就是你的食物！</p>
+						  <img src="逃出山洞/photos/食物.jpg" width="160" height="190" id="picture5">
+						  <img src="逃出山洞/photos/绳子.jpg" width="140" height="190" id="pictures">
+						  <style></style>
+						  <p>
+						  把食物与绳子拴在一起，似乎可以做点什么。。。</p>
+						  <audio src="逃出山洞/audio/chenggong.wav"id="fan2">
+
+</div>
+</section>
+
+
+<section>
+<div>                                                                                                          
+<p>
+                          你灵机一动，用绳子系住了食物，用力扔出了洞口，努力爬出了洞口。终于在第二天的清晨，看到了最美丽的日出！
+                          <img src="逃出山洞/photos/日出.jpg" width="340" height="420" id="picture6">
+</p>
+</div>
+</section>
+
+
+
+			
+			</div>
+		</div>
+		<script type="text/javascript" src="逃出山洞/js/pageflip.js"></script>
+	</body>
+<html>

@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+* {margin:0; padding:0;}
+body {overflow:hidden; background:url(../images/bg.jpg);}
+#div1 {width:480px; height:300px; position:absolute; left:50%; top:50%; margin-left:-200px; margin-top:-180px;}
+#ul1 {width:75%; height:100%; position:relative; z-index:1;}
+
+#ul1 li {width:75%; height:100%; background:url(../images/browser.png) center no-repeat; background-size:100%; position:relative; 
+list-style:none; overflow:-hidden; position:absolute; left:0; top:0; 
+-webkit-transform:perspective(1100px) rotateY(0deg);-moz-transform:perspective(1100px) rotateY(0deg);
+-ms-transform:perspective(1100px) rotateY(0deg);-o-transform:perspective(1100px) rotateY(0deg); z-index:1; 
+opacity:0; box-shadow:0 4px 14px rgba(0,0,0,0.6); 
+-webkit-transition:1s all ease;-moz-transition:1s all ease;-ms-transition:1s all ease;-o-transition:1s all ease; 
+cursor:pointer;}
+
+#ul1 .cur {width:75%; height:100%;z-index:4; opacity:1; -webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1); z-index:99;}
+#ul1 .active {width:75%; height:100%;z-index:4; opacity:1; -webkit-transform:translateY(40px) scale(2);-moz-transform:translateY(40px) scale(2);-ms-transform:translateY(40px) scale(2);-o-transform:translateY(40px) scale(2); z-index:99;}
+#ul1 .left, #ul1 .right {z-index:3; opacity:0.9;}
+#ul1 .left2, #ul1 .right2 {z-index:2; opacity:0;}
+
+#bookshell {z-index:1; opacity:0.9; position:fixed; left:190px; top:510px;}
+#text {z-index:1; opacity:0.9; position:fixed; left:530px; top:50px;}
+#buttonOne {z-index:1; opacity:0.9; position:fixed; left:100px; top:480px;}
+#buttonTwo{z-index:1; opacity:0.9; position:fixed; left:1050px; top:480px;}
+#buttonThree{z-index:1; opacity:0.9; position:fixed; left:540px; top:600px;}
+
+#ul1 .left {
+	-webkit-transform:perspective(1100px) translate(-300px, 10px) rotateY(60deg) scale(0.9);
+	-moz-transform:perspective(1100px) translate(-300px, 10px) rotateY(60deg) scale(0.9);
+	-ms-transform:perspective(1100px) translate(-300px, 10px) rotateY(60deg) scale(0.9);
+	-o-transform:perspective(1100px) translate(-300px, 10px) rotateY(60deg) scale(0.9);
+}
+#ul1 .right {
+	-webkit-transform:perspective(1100px) translate(300px, 10px) rotateY(-60deg) scale(0.9);
+	-moz-transform:perspective(1100px) translate(300px, 10px) rotateY(-60deg) scale(0.9);
+	-ms-transform:perspective(1100px) translate(300px, 10px) rotateY(-60deg) scale(0.9);
+	-o-transform:perspective(1100px) translate(300px, 10px) rotateY(-60deg) scale(0.9);
+}
+#ul1 .left2 {
+	-webkit-transform:perspective(1100px) translate(-400px, 10px) rotateY(60deg) scale(0.9);
+	-moz-transform:perspective(1100px) translate(-400px, 10px) rotateY(60deg) scale(0.9);
+	-ms-transform:perspective(1100px) translate(-400px, 10px) rotateY(60deg) scale(0.9);
+	-o-transform:perspective(1100px) translate(-400px, 10px) rotateY(60deg) scale(0.9);
+}
+#ul1 .right2 {
+	-webkit-transform:perspective(1100px) translate(400px, 10px) rotateY(-60deg) scale(0.9);
+	-moz-transform:perspective(1100px) translate(400px, 10px) rotateY(-60deg) scale(0.9);
+	-ms-transform:perspective(1100px) translate(400px, 10px) rotateY(-60deg) scale(0.9);
+	-o-transform:perspective(1100px) translate(400px, 10px) rotateY(-60deg) scale(0.9);
+}
+
+#ul1 li img {width:75%; height:100%;position:absolute; width:270px; height:590px auto; left:0; top:0px;}
