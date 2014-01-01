@@ -1,9 +1,10 @@
 // JavaScript Document
 window.onload=function ()
 {
+    //将应用程序窗口最大化
 	var gui = require('nw.gui');
-  var win = gui.Window.get();
-  win.maximize();
+    var win = gui.Window.get();
+    win.maximize();
 
 	var oDiv=document.getElementById('div1');
 	var oUl=document.getElementById('ul1');
@@ -27,18 +28,18 @@ window.onload=function ()
 	db.transaction(function(tx){
 		    tx.executeSql('CREATE TABLE if not exists book7 (bookno unique,bookname,isshow)');
             tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (1, "help","true false")');
-            tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (2, "WINTER","true")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (3, "Las Vegas","true")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (4, "kong zi","true")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (5, "bei ke han mu","true")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (6, "zhang xi","true")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (7, "feng xiao gang","true")');
+            tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (2, "WINTER","false")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (3, "Las Vegas","false")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (4, "kong zi","false")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (5, "bei ke han mu","false")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (6, "zhang xi","false")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (7, "feng xiao gang","false")');
 			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (8, "史玉柱","false")');
 			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (9, "任志强","false")');
 			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (10, "毛泽东","false")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (11, "大熊猫","false")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (12, "发现你自己","false")');
-			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (13, "逃出山洞","false")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (11, "大熊猫","true")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (12, "发现你自己","true")');
+			tx.executeSql('INSERT INTO book7 (bookno,bookname,isshow) VALUES (13, "逃出山洞","true")');
 		  });
     
 	 
@@ -59,17 +60,9 @@ window.onload=function ()
 				   var source=row.bookname+".html"
 				   test.setAttribute("id",row.bookname );
 	               test.innerHTML="<img src = \"" + src + "\"/>"
-	               oUl.insertBefore(test,oUl.childNodes[i]); 
-				    }
-				});				
-	        });
-			
-	
-	db.transaction(function(tx){
-		    tx.executeSql("select * from book7 where isshow='true' ",[],function(tx,rs){
-				for(var i=0;i<rs.rows.length;i++){
-				   var row =rs.rows.item(i);
-				   //添加一行
+	               oUl.insertBefore(test,oUl.childNodes[i+1]); 
+
+				    //添加一行
 				   var testTbl=document.getElementById('tableIdOne')
                    var newTr = testTbl.insertRow(i);
                   //添加两列
@@ -81,10 +74,11 @@ window.onload=function ()
                    newTd2.innerHTML = row.bookno; 
                    newTd1.innerText= row.bookname;
 				   newTd0.innerHTML = '<input type=checkbox>';
-				   
 				    }
-				});
-				tx.executeSql("select * from book7 where isshow='false' ",[],function(tx,rs){
+				});				
+	      
+
+	tx.executeSql("select * from book7 where isshow='false' ",[],function(tx,rs){
 				for(var i=0;i<rs.rows.length;i++){
 				   var row =rs.rows.item(i);
 				   //添加一行
@@ -102,6 +96,7 @@ window.onload=function ()
 				    }
 				});
 	        });
+
 			// 变换颜色
     function setcolor(resetid, setid){
 	if(tag==1){
@@ -178,7 +173,6 @@ window.onload=function ()
 		 tx.executeSql("update book7 set isshow = 'false' where bookno= " +parseInt(m));
 		 
 		 document.getElementById('tableIdOne').deleteRow(j); 
-		 //alert("我是"+parseInt(m));
                  };
 				 }
 				 });
@@ -389,8 +383,6 @@ window.onload=function ()
 		}
 	};
 	
-
-
 	var autoPlayTimer=null;
 	
 	oDiv.onmouseout=function ()
@@ -407,47 +399,5 @@ window.onload=function ()
 	
 	oDiv.onmouseout();
 	
-	document.getElementById('rev').onclick=function ()
-	{
-		if(this.checked)
-		{
-			createReflect();
-		}
-		else
-		{
-			removeReflect();
-		}
-	};
 	
-	createReflect();
-	
-	function createReflect()
-	{
-		removeReflect();
-		
-		for(var i=0;i<aLi.length;i++)
-		{
-			var oSpan=document.createElement('span');
-			oSpan.innerHTML=aLi[i].innerHTML+'<em></em>';
-			aLi[i].appendChild(oSpan);
-		}
-	}
-	
-	function removeReflect()
-	{
-		for(var i=0;i<aLi.length;i++)
-		{
-			var aSpan=aLi[i].getElementsByTagName('span');
-			while(aSpan.length)aLi[i].removeChild(aSpan[0]);
-		}
-	}
-	(function (){
-		var oS=document.createElement('script');
-			
-		oS.type='text/javascript';
-		oS.src='http://www.zhinengshe.com/zpi/zns_demo.php?id=3517';
-			
-		document.body.appendChild(oS);
-	})();
-	 
 };
